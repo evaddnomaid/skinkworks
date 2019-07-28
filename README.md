@@ -1,3 +1,4 @@
-=== Skink Works ===
+Skink Works
+===========
 
 This is a repository for the Skink project.
