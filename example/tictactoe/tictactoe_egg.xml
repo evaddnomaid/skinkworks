@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tictactoe_egg SYSTEM "tictactoe_egg.dtd">
+<tictactoe_egg>
+    <egg>
+        <board>
+            <row><cell id="a1" player=""/><cell id="a2" player=""/><cell id="a3" player=""/></row>
+            <row><cell id="b1" player=""/><cell id="b2" player=""/><cell id="b3" player=""/></row>
+            <row><cell id="c1" player=""/><cell id="c2" player=""/><cell id="c3" player=""/></row>
+        </board>
+    </egg>
+    <grub>
+        <move>
+            <player fill_regex="/^[XO]$/"/>
+            <position fill_regex="/^[abc][123]$/"/>
+        </move>
+    </grub>
+</tictactoe_egg>

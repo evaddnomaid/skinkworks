@@ -1,0 +1,15 @@
+<!ELEMENT tictactoe_egg (egg,grub)>
+
+<!ELEMENT egg (board)>
+<!ELEMENT board (row, row, row)>
+<!ELEMENT row (cell, cell, cell)>
+<!ELEMENT cell (#PCDATA)>
+<!ATTLIST cell id ID #REQUIRED>
+<!ATTLIST cell player CDATA #REQUIRED>
+
+<!ELEMENT grub (move)>
+<!ELEMENT move (player, position)>
+<!ELEMENT player (#PCDATA)>
+<!ELEMENT position (#PCDATA)>
+<!ATTLIST player fill_regex CDATA #IMPLIED>
+<!ATTLIST position fill_regex CDATA #IMPLIED>
