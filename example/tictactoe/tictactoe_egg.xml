@@ -3,15 +3,27 @@
 <tictactoe_egg>
     <egg>
         <board>
-            <row><cell id="A1" player="">X</cell><cell id="A2" player=""></cell><cell id="A3" player="">X</cell></row>
-            <row><cell id="B1" player="">X</cell><cell id="B2" player="">O</cell><cell id="B3" player="">X</cell></row>
-            <row><cell id="C1" player="">O</cell><cell id="C2" player="">X</cell><cell id="C3" player="">O</cell></row>
+            <row>
+                <cell id="A1" player="open"/>
+                <cell id="A2" player="open"/>
+                <cell id="A3" player="open"/>
+            </row>
+            <row>
+                <cell id="B1" player="open"/>
+                <cell id="B2" player="open"/>
+                <cell id="B3" player="open"/>
+            </row>
+            <row>
+                <cell id="C1" player="open"/>
+                <cell id="C2" player="open"/>
+                <cell id="C3" player="open"/>
+            </row>
         </board>
     </egg>
     <grub>
         <move>
-            <player fill_regex="/^[XO]$/">X</player>
-            <position fill_regex="/^[ABC][123]$/">A1</position>
+            <player fill_regex="/^[XO]$/"></player>
+            <position fill_regex="/^[ABC][123]$/"></position>
         </move>
     </grub>
 </tictactoe_egg>

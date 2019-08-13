@@ -63,7 +63,7 @@
 </xsl:template>
 
 <xsl:template match="cell">
-<td><xsl:value-of select="."/></td>
+<td><xsl:value-of select="@id"/>: <xsl:value-of select="@player"/></td>
 </xsl:template>
 
 <xsl:template match="grub"/>
@@ -75,7 +75,7 @@
 <xsl:template name="give_next_player">
     <xsl:choose>
         <xsl:when test="$winner = 'cat'">game over</xsl:when>
-        <xsl:when test="count(//cell[. = 'O']) &gt; count(//cell[. = 'X'])">X</xsl:when>
+        <xsl:when test="count(//cell[@player = 'O']) &gt; count(//cell[@player = 'X'])">X</xsl:when>
         <xsl:otherwise>O</xsl:otherwise>
     </xsl:choose>
 </xsl:template>
@@ -83,33 +83,33 @@
 <xsl:template name="give_winner">
     <xsl:choose>
         <!-- Columns -->
-        <xsl:when test="//cell[@id='A1'] = //cell[@id='A2'] and //cell[@id='A2'] = //cell[@id='A3'] and //cell[@id='A1'] != ''">
-            <xsl:value-of select="//cell[@id='A1']"/>
+        <xsl:when test="//cell[@id='A1']/@player = //cell[@id='A2']/@player and //cell[@id='A2']/@player = //cell[@id='A3']/@player and //cell[@id='A1']/@player != 'open'">
+            <xsl:value-of select="//cell[@id='A1']/@player"/>
         </xsl:when>
-        <xsl:when test="//cell[@id='B1'] = //cell[@id='B2'] and //cell[@id='B2'] = //cell[@id='B3'] and //cell[@id='B1'] != ''">
-            <xsl:value-of select="//cell[@id='B1']"/>
+        <xsl:when test="//cell[@id='B1']/@player = //cell[@id='B2']/@player and //cell[@id='B2']/@player = //cell[@id='B3']/@player and //cell[@id='B1']/@player != 'open'">
+            <xsl:value-of select="//cell[@id='B1']/@player"/>
         </xsl:when>
-        <xsl:when test="//cell[@id='C1'] = //cell[@id='C2'] and //cell[@id='C2'] = //cell[@id='C3'] and //cell[@id='C1'] != ''">
-            <xsl:value-of select="//cell[@id='C1']"/>
+        <xsl:when test="//cell[@id='C1']/@player = //cell[@id='C2']/@player and //cell[@id='C2']/@player = //cell[@id='C3']/@player and //cell[@id='C1']/@player != 'open'">
+            <xsl:value-of select="//cell[@id='C1']/@player"/>
         </xsl:when>
         <!-- Rows -->
-        <xsl:when test="//cell[@id='A1'] = //cell[@id='B1'] and //cell[@id='B1'] = //cell[@id='C1'] and //cell[@id='A1'] != ''">
-            <xsl:value-of select="//cell[@id='A1']"/>
+        <xsl:when test="//cell[@id='A1']/@player = //cell[@id='B1']/@player and //cell[@id='B1']/@player = //cell[@id='C1']/@player and //cell[@id='A1']/@player != 'open'">
+            <xsl:value-of select="//cell[@id='A1']/@player"/>
         </xsl:when>
-        <xsl:when test="//cell[@id='A2'] = //cell[@id='B2'] and //cell[@id='B2'] = //cell[@id='C2'] and //cell[@id='A2'] != ''">
-            <xsl:value-of select="//cell[@id='A2']"/>
+        <xsl:when test="//cell[@id='A2']/@player = //cell[@id='B2']/@player and //cell[@id='B2']/@player = //cell[@id='C2']/@player and //cell[@id='A2']/@player != 'open'">
+            <xsl:value-of select="//cell[@id='A2']/@player"/>
         </xsl:when>
-        <xsl:when test="//cell[@id='A3'] = //cell[@id='B3'] and //cell[@id='B3'] = //cell[@id='C3'] and //cell[@id='A3'] != ''">
-            <xsl:value-of select="//cell[@id='A3']"/>
+        <xsl:when test="//cell[@id='A3']/@player = //cell[@id='B3']/@player and //cell[@id='B3']/@player = //cell[@id='C3']/@player and //cell[@id='A3']/@player != 'open'">
+            <xsl:value-of select="//cell[@id='A3']/@player"/>
         </xsl:when>
         <!-- Diagonal -->
-        <xsl:when test="//cell[@id='A1'] = //cell[@id='B2'] and //cell[@id='B2'] = //cell[@id='C3'] and //cell[@id='A1'] != ''">
-            <xsl:value-of select="//cell[@id='A1']"/>
+        <xsl:when test="//cell[@id='A1']/@player = //cell[@id='B2']/@player and //cell[@id='B2']/@player = //cell[@id='C3']/@player and //cell[@id='A1']/@player != 'open'">
+            <xsl:value-of select="//cell[@id='A1']/@player"/>
         </xsl:when>
-        <xsl:when test="//cell[@id='A3'] = //cell[@id='B2'] and //cell[@id='B2'] = //cell[@id='C1'] and //cell[@id='A3'] != ''">
-            <xsl:value-of select="//cell[@id='A3']"/>
+        <xsl:when test="//cell[@id='A3']/@player = //cell[@id='B2']/@player and //cell[@id='B2']/@player = //cell[@id='C1']/@player and //cell[@id='A3']/@player != 'open'">
+            <xsl:value-of select="//cell[@id='A3']/@player"/>
         </xsl:when>
-        <xsl:when test="//cell = ''">none</xsl:when>
+        <xsl:when test="//cell/@player = 'open'">none</xsl:when>
         <xsl:otherwise>cat</xsl:otherwise>
     </xsl:choose>
 </xsl:template>
