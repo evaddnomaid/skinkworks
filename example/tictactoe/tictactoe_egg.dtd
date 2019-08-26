@@ -1,6 +1,6 @@
-<!ELEMENT tictactoe_egg (egg,grub)>
+<!ELEMENT tictactoe (skink,grub)>
 
-<!ELEMENT egg (board)>
+<!ELEMENT skink (board)>
 <!ELEMENT board (row, row, row)>
 <!ELEMENT row (cell, cell, cell)>
 <!ELEMENT cell (#PCDATA)>
@@ -11,5 +11,5 @@
 <!ELEMENT move (player, position)>
 <!ELEMENT player (#PCDATA)>
 <!ELEMENT position (#PCDATA)>
-<!ATTLIST player fill_regex CDATA #IMPLIED>
-<!ATTLIST position fill_regex CDATA #IMPLIED>
+<!ATTLIST player fill_regex CDATA "/^[XO]$/">
+<!ATTLIST position fill_regex CDATA "/^[ABC][123]$/">

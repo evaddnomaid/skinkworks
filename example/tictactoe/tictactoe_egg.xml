@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE tictactoe_egg SYSTEM "tictactoe_egg.dtd">
-<tictactoe_egg>
-    <egg>
+<!DOCTYPE tictactoe SYSTEM "tictactoe_egg.dtd">
+<tictactoe>
+    <skink>
         <board>
             <row>
                 <cell id="A1" player="open"/>
@@ -19,11 +19,11 @@
                 <cell id="C3" player="open"/>
             </row>
         </board>
-    </egg>
+    </skink>
     <grub>
         <move>
             <player fill_regex="/^[XO]$/"></player>
             <position fill_regex="/^[ABC][123]$/"></position>
         </move>
     </grub>
-</tictactoe_egg>
+</tictactoe>
