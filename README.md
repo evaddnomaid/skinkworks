@@ -11,11 +11,15 @@ lifecycle
 PHP Implementation Notes
 ========================
 
-How to start a local PHP server:
+How to start a local PHP server
 
-php -S localhost:8080 -t foo/
+This works currently:
 
-php -S localhost:8080 serve/router.php
+    php -S localhost:8080 serve/router.php
+
+More generally:
+
+    php -S localhost:8080 -t foo/
 
 See https://www.php.net/manual/en/features.commandline.webserver.php
 
