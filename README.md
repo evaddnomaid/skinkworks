@@ -3,10 +3,31 @@ Skink Works
 
 This is a repository for the Skink project.
 
-Design Notes
-============
+Design Principles
+=================
 
-lifecycle
+- Document based
+- Documents are immutable
+- Documents are assembled from individual contributions
+- Individual contributions are signed
+- Individual contributions are stored in each contributor's data store
+
+Use Cases
+=========
+
+- Checklists
+- Picnic planning
+- Choosing a movie
+- Classic board game (e.g., chess)
+
+Hosting Options
+===============
+
+- git
+	- A single repo
+	- Multiple repos (each contributor's own)
+- Blog
+- Comments section (of Bugzilla, JIRA, WordPress, etc.)
 
 PHP Implementation Notes
 ========================
